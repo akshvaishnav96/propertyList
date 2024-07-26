@@ -1,10 +1,17 @@
 import CountDisplayGrid from "../../components/admin/CountDisplayGrid";
 import "../../css/adminPanal.css";
 export default function Admin() {
+  const backGroundStyle = {
+    background: "url(/svg/AdminBackgroundShape.svg)",
+    backgroundAttachment: "fixed",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100%",
+    backgroundPosition: " center",
+  };
   return (
     <>
       <div className={"light"}>
-        <div className="h-full ml-14 mt-14 mb-10 md:ml-64">
+        <div className="h-full ml-14 mt-14 mb-10 md:ml-64" style={backGroundStyle}>
           <CountDisplayGrid />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 p-4 gap-4">

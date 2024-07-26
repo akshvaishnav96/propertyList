@@ -12,7 +12,7 @@ export default function ListItemName({ href, name, src }) {
       <Link
         href={href}
         className={`relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 border-l-4  text-white-600 hover:text-white-800    dark:hover:border-gray-800 ${
-          pathName === href ? "border-yellow-300 " : "border-transparent"
+          pathName === href ? "border-orange-500 " : "border-transparent"
         }`}
       >
         <span className="inline-flex justify-center items-center ml-4 mr-2">
