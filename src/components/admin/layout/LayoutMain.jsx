@@ -6,7 +6,7 @@ import React, { useCallback, useState } from "react";
 import SearchFrom from "./navbar/SearchForm";
 
 export default function layoutMain({ children, SideBarMain, LogoutBtn }) {
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState("light");
 
   let lightMode = useCallback(function lightMode() {
     setMode("light");
@@ -85,8 +85,19 @@ export default function layoutMain({ children, SideBarMain, LogoutBtn }) {
         </div>
         <div className="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
           {SideBarMain}
-
-          {children}
+          <div
+            style={{
+              background: "url(/svg/AdminBackgroundShape.svg)",
+              backgroundAttachment: "fixed",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100%",
+              backgroundPositionX: "left",
+              backgroundPositionY: "center",
+            }}
+            className="bg-transparent "
+          >
+            {children}
+          </div>
         </div>
       </div>
     </>

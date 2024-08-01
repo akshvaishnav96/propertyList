@@ -1,15 +1,20 @@
-import React, { memo } from "react";
+import { memo } from "react";
 
-function Input({ type, name, id, placeholder }) {
+function InputElem({ type, name, id, placeholder, className, value, func }) {
   return (
     <input
       type={type}
       name={name}
       id={id}
       placeholder={placeholder}
-      className="w-full pl-3 text-sm text-black outline-none focus:outline-none bg-transparent"
+      className={className}
+      autoComplete="off"
+      value={value}
+      onChange={(e) => {
+        func(e.target.value);
+      }}
     />
   );
 }
 
-export default memo(Input);
+export default memo(InputElem);
