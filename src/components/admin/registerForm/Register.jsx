@@ -7,13 +7,19 @@ import InputLable from "../../InputLable";
 import FormSubmitBtn from "@/components/FormSubmitBtn";
 import { v4 as uuidv4 } from "uuid";
 import formSubmitHandler from "@/Handlers/FormSubmitHandler";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-export default function Register({ action }) {
+
+
+export default function Register() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-
+  const [data, setData] = useState("");
+  const [err, setError] = useState("");
   const inputElem = [
     {
       lablefor: "username",
@@ -61,39 +67,52 @@ export default function Register({ action }) {
     },
   ];
 
+  useEffect(() => {
+    if (data.status) {
+      router.push(data.redirect);
+    } else {
+      setError(data.err);
+    }
+  }, [data, err]);
+
   return (
-    <form
-      onSubmit={(e) =>
-        formSubmitHandler(e, "/api/register", "POST", {
-          email,
-          mobile,
-          username,
-          password,
-        })
-      }
-      method="POST"
-    >
-      {inputElem.map((item, index) => (
-        <div className="mb-4" key={index}>
-          <InputLable lablehtmlFor={item.lablefor} text={item.labletext} />
+    <>
+      <h3 className="text-center text-red-500">{err}</h3>
+      <form
+        onSubmit={async (e) =>
+          setData(
+            await formSubmitHandler(e, "/api/register", "POST", {
+              email,
+              mobile,
+              username,
+              password,
+            })
+          )
+        }
+        method="POST"
+      >
+        {inputElem.map((item, index) => (
+          <div className="mb-4" key={index}>
+            <InputLable lablehtmlFor={item.lablefor} text={item.labletext} />
 
-          <InputElem
-            type={item.inputType}
-            id={item.id}
-            name={item.name}
-            className={item.className}
-            value={item.value}
-            func={item.func}
-          />
+            <InputElem
+              type={item.inputType}
+              id={item.id}
+              name={item.name}
+              className={item.className}
+              value={item.value}
+              func={item.func}
+            />
+          </div>
+        ))}
+
+        <div className="mb-6 text-blue-500">
+          <a href="#" className="hover:underline">
+            Forgot Password?
+          </a>
         </div>
-      ))}
-
-      <div className="mb-6 text-blue-500">
-        <a href="#" className="hover:underline">
-          Forgot Password?
-        </a>
-      </div>
-      <FormSubmitBtn text={"Register"} />
-    </form>
+        <FormSubmitBtn text={"Register"} />
+      </form>
+    </>
   );
 }

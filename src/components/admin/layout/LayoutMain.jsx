@@ -5,7 +5,7 @@ import React, { useCallback, useState } from "react";
 
 import SearchFrom from "./navbar/SearchForm";
 
-export default function layoutMain({ children, SideBarMain, LogoutBtn }) {
+export default function LayoutMain({ children, SideBarMain, LogoutBtn }) {
   const [mode, setMode] = useState("light");
 
   let lightMode = useCallback(function lightMode() {

@@ -1,5 +1,9 @@
 import CountDisplayGrid from "../../components/admin/CountDisplayGrid";
 import "../../css/adminPanal.css";
+import Image from "next/image";
+// import dbConn from "../../mongodb/connection/dbConn";
+
+// dbConn();
 
 export const metadata = {
   title: "my page",
@@ -393,9 +397,12 @@ export default function Admin() {
                         </svg>
                         3/5
                       </span>
-                      <img
+                      <Image
                         src="https://i.imgur.com/OZaT7jl.png"
                         className="rounded-full"
+                        width={40}
+                        height={40}
+                         alt="image not found"
                       />
                     </div>
                   </div>
@@ -548,11 +555,13 @@ export default function Admin() {
                       <td className="px-4 py-3">
                         <div className="flex items-center text-sm">
                           <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                            <img
+                            <Image
                               className="object-cover w-full h-full rounded-full"
                               src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
                               alt=""
                               loading="lazy"
+                              width={40}
+                              height={40}
                             />
                             <div
                               className="absolute inset-0 rounded-full shadow-inner"
@@ -580,11 +589,13 @@ export default function Admin() {
                       <td className="px-4 py-3">
                         <div className="flex items-center text-sm">
                           <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                            <img
+                            <Image
                               className="object-cover w-full h-full rounded-full"
                               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;facepad=3&amp;fit=facearea&amp;s=707b9c33066bf8808c934c8ab394dff6"
                               alt=""
                               loading="lazy"
+                              width={40}
+                              height={40}
                             />
                             <div
                               className="absolute inset-0 rounded-full shadow-inner"
@@ -612,11 +623,13 @@ export default function Admin() {
                       <td className="px-4 py-3">
                         <div className="flex items-center text-sm">
                           <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                            <img
+                            <Image
                               className="object-cover w-full h-full rounded-full"
                               src="https://images.unsplash.com/photo-1502720705749-871143f0e671?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;s=b8377ca9f985d80264279f277f3a67f5"
                               alt=""
                               loading="lazy"
+                              width={40}
+                              height={40}
                             />
                             <div
                               className="absolute inset-0 rounded-full shadow-inner"
@@ -644,11 +657,13 @@ export default function Admin() {
                       <td className="px-4 py-3">
                         <div className="flex items-center text-sm">
                           <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                            <img
+                            <Image
                               className="object-cover w-full h-full rounded-full"
                               src="https://images.unsplash.com/photo-1551006917-3b4c078c47c9?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
                               alt=""
                               loading="lazy"
+                              width={40}
+                              height={40}
                             />
                             <div
                               className="absolute inset-0 rounded-full shadow-inner"
@@ -676,11 +691,13 @@ export default function Admin() {
                       <td className="px-4 py-3">
                         <div className="flex items-center text-sm">
                           <div className="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                            <img
+                            <Image
                               className="object-cover w-full h-full rounded-full"
                               src="https://images.unsplash.com/photo-1566411520896-01e7ca4726af?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=200&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
                               alt=""
                               loading="lazy"
+                              width={40}
+                              height={40}
                             />
                             <div
                               className="absolute inset-0 rounded-full shadow-inner"

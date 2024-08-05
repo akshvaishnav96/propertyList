@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URL = process.env.MONGODB_URL;
-const DATABASE_NAME = process.env.DATABASE_NAME;
+const mongodbUrl = process.env.MONGODB_URL;
+const databaseName = process.env.DATABASE_NAME;
 
 let isConnected = false; // Track connection status
 
@@ -12,11 +12,8 @@ async function dbConn() {
     }
 
     try {
-        const dbUrl = `${MONGODB_URL}/${DATABASE_NAME}`;
-        await mongoose.connect(dbUrl, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        const dbUrl = `${mongodbUrl}${databaseName}`;
+        await mongoose.connect(dbUrl);
 
         isConnected = true; // Update connection status
         console.log('MongoDB connected');

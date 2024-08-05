@@ -9,6 +9,8 @@ export default async function formSubmitHandler(e, url, method, bodyData) {
         body: JSON.stringify(bodyData),
     });
 
+
     const data = await res.json();
+
     return data;
 }

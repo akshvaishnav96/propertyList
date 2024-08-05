@@ -15,9 +15,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <LayoutMain
-      children={children}
       SideBarMain={<SideBarMain />}
-      LogoutBtn={<LogoutBtn text={"Logout"} />}
-    />
+      LogoutBtn={<LogoutBtn text="Logout" />}
+    >
+      {children}
+    </LayoutMain>
   );
 }

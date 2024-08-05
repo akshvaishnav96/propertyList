@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import RedirectBackBtn from "../components/RedirectBackBtn";
+import Image from "next/image";
 export default function notFound() {
   return (
     <>
@@ -10,7 +11,7 @@ export default function notFound() {
             <div className="absolute">
               <div className="">
                 <h1 className="my-2 text-gray-800 font-bold text-2xl">
-                  Looks like you've found the doorway to the great nothing
+                  Looks like you&apos;ve found the doorway to the great nothing
                 </h1>
                 <p className="my-2 text-gray-800">
                   Sorry about that! Please visit our hompage to get where you
@@ -20,12 +21,22 @@ export default function notFound() {
               </div>
             </div>
             <div>
-              <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
+              <Image
+                src="https://i.ibb.co/G9DC8S0/404-2.png"
+                width={500}
+                height={500}
+                alt="image not found"
+              />
             </div>
           </div>
         </div>
         <div>
-          <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+          <Image
+            src="https://i.ibb.co/ck1SGFJ/Group.png"
+            width={500}
+            height={500}
+             alt="image not found"
+          />
         </div>
       </div>
     </>

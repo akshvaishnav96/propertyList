@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 export default function Login() {
   const router = useRouter();
 
-  const [detail, setDetail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState("");
   const [error, setError] = useState("");
@@ -23,8 +23,8 @@ export default function Login() {
       name: "username",
       className:
         "w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500",
-      value: detail,
-      func: setDetail,
+      value: email,
+      func: setEmail,
     },
     {
       lablefor: "password",
@@ -50,10 +50,10 @@ export default function Login() {
       onSubmit={async (e) =>
         setData(
           await formSubmitHandler(e, "/api/login", "POST", {
-            detail,
+            email,
             password,
           }),
-          setDetail(""),
+          setEmail(""),
           setPassword("")
         )
       }
